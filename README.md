@@ -1,4 +1,4 @@
-# claude-telegram
+# Return by Death
 
 English | [繁體中文](README.zh-TW.md)
 
@@ -117,8 +117,8 @@ Paste the bot token when prompted.
 **1. Clone the repo**
 
 ```bash
-git clone https://github.com/cutevisor/claude-telegram.git
-cd claude-telegram
+git clone https://github.com/cutevisor/return-by-death.git
+cd return-by-death
 ```
 
 **2. Fill in your personal config**

@@ -1,4 +1,4 @@
-# claude-telegram
+# Return by Death
 
 [English](README.md) | 繁體中文
 
@@ -117,8 +117,8 @@ claude login   # 以 Anthropic 帳號登入
 **1. 取得程式碼**
 
 ```bash
-git clone https://github.com/cutevisor/claude-telegram.git
-cd claude-telegram
+git clone https://github.com/cutevisor/return-by-death.git
+cd return-by-death
 ```
 
 **2. 填寫個人設定**
