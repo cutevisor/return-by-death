@@ -1,0 +1,19 @@
+#!/bin/bash
+# 向 claude-telegram tmux session 發送任意指令
+# 用法: claude-telegram-cmd /compact
+#       claude-telegram-cmd /help
+#       claude-telegram-cmd "任意文字"
+
+if [ -z "$1" ]; then
+  echo "用法: claude-telegram-cmd <指令>"
+  echo "範例: claude-telegram-cmd /compact"
+  exit 1
+fi
+
+if ! tmux has-session -t claude-telegram 2>/dev/null; then
+  echo "錯誤: claude-telegram session 不存在"
+  exit 1
+fi
+
+tmux send-keys -t claude-telegram "$*" Enter
+echo "已送出: $*"

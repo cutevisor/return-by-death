@@ -1,0 +1,20 @@
+[Unit]
+Description=Claude Code Telegram Channel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+# 將 /home/YOUR_USERNAME 替換為你的家目錄，或使用 install.sh 自動產生
+ExecStart=/usr/bin/tmux new-session -d -s claude-telegram /home/YOUR_USERNAME/.local/bin/claude-telegram-wrapper.sh
+ExecStop=/usr/bin/tmux kill-session -t claude-telegram
+Restart=always
+RestartSec=10
+TimeoutStopSec=15
+KillMode=control-group
+Environment=HOME=/home/YOUR_USERNAME
+Environment=TMPDIR=/tmp
+Environment=PATH=/home/YOUR_USERNAME/.local/bin:/home/YOUR_USERNAME/.bun/bin:/home/YOUR_USERNAME/.npm-global/bin:/usr/local/bin:/usr/bin:/bin
+
+[Install]
+WantedBy=default.target
